@@ -1,6 +1,11 @@
-
 from django.shortcuts import render
 
+def hello(request):
+  return render(request, 'base.html')
+
+"""
+from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Book, Review
 from .utils import average_rating
 
@@ -19,8 +24,8 @@ def book_list(request):
                           'book_rating': book_rating,
                           'number_of_reviews': number_of_reviews})
 
-    #context = {
-     #   'book_list': book_list
-    #}
-    return render(request, 'reviews/books_list.html', {'book_list' : book_list})
-  
+    context = {
+        'book_list': book_list
+    }
+    return render(request, 'books_list.html', context)
+  """
